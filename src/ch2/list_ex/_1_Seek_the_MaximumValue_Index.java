@@ -1,4 +1,4 @@
-/*
+package ch2.list_ex;/*
 주어진 입력중 최대값을 구하고, 최대값이 이 위치하는 index 값의 목록을 반환하세요.
 
 입력:
@@ -15,7 +15,7 @@
 import java.util.*;
 import java.util.stream.*;
 
-public class _2_1_Seek_the_MaximumValue_Index {
+public class _1_Seek_the_MaximumValue_Index {
     public int[] solution1(int[] arr) {
 
         //최댓값 구하기
