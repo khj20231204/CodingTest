@@ -6,7 +6,7 @@ import java.util.Set;
 
 public class MapEx {
 
-    public void solution(){
+    public void mapEx(){
         //put, get, containsKey, containsValue, getOrDefault, replace, keyset, values, size, isEmpty, remove
         HashMap<String, Integer> map = new HashMap<>();
         map.put("A",19);
