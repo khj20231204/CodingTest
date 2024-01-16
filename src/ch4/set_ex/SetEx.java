@@ -20,10 +20,7 @@ public class SetEx {
         String[] words = {"234","sdf"};
         Set<String> set2 = Arrays.stream(words).collect(Collectors.toSet());
         String[] converWords = set2.stream().toArray(String[]::new);
-
-        String s = "dfsdf";
-        char[] c = s.toCharArray();
-        int aa = c.length;
+        //String[] converWords = Arrays.stream(words).toArray(String[]::new);
 
         Set<MyData> set = new HashSet<>();
         set.add(new MyData(21));
