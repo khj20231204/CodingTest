@@ -30,6 +30,7 @@ public class StackQueueEx {
 
         //------------------------- stack -------------------------
         Stack<Integer> stack = new Stack<Integer>();
+
         /* push(e)-stack에 값을 입력 */
         stack.push(1);
         stack.push(2);
