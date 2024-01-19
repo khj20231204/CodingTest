@@ -44,6 +44,7 @@
     "Application.ch3_Main.executor": "Run",
     "Application.ch4_Main.executor": "Run",
     "Application.ch5_Main.executor": "Run",
+    "Application.ch6_Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "git-widget-placeholder": "master",
@@ -56,7 +57,7 @@
       <recent name="ch3.map_ex" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ch5_Main">
+  <component name="RunManager" selected="Application.ch6_Main">
     <configuration name="ch2_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch2.list_ex.ch2_Main" />
       <module name="CodingTest" />
@@ -103,8 +104,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ch6_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch6.search_ex.ch6_Main" />
+      <module name="CodingTest" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ch6.search_ex.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ch6_Main" />
         <item itemvalue="Application.ch5_Main" />
         <item itemvalue="Application.ch4_Main" />
         <item itemvalue="Application.ch3_Main" />

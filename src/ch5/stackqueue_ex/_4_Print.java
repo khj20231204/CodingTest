@@ -26,7 +26,6 @@ public class _4_Print {
         //System.out.println(list);
 
 
-
         return answer;
     }
 
