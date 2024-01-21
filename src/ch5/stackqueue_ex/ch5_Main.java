@@ -8,8 +8,9 @@ public class ch5_Main {
 
     public static void main(String[] args) {
 
-        int result = PriorityQueueEx.solution(new int[]{2,3,5,7,1,8,2,2},6);
+        int result = _4_Print.solution1(new int[]{2,3,5,7,1,8,2,2}, 3);
 
+        PriorityQueueEx.priorityQueueEx();
     }
 }
 

@@ -3,7 +3,30 @@ package ch5.stackqueue_ex;
 import java.util.*;
 
 public class _4_Print {
-    public int solution(int[] priorities, int location) {
+    public static int solution1(int[] priorities, int location) {
+        int answer = 1;
+        PriorityQueue<Integer> queue = new PriorityQueue<>(Comparator.reverseOrder()); // priorities 값
+        for (int i : priorities) {
+            queue.offer(i);
+        }
+        //queue는 peek()나 poll()이 될 때, 오름차순이나 내림차순, 정렬된 순서로 출력이 된다.
+        //queue 자체의 순서는 입력된 순서와 일치하고 입력된 순서가 location과 일치
+        //즉, queue의 데이터 입력 순서 = location.
+        while (!queue.isEmpty()) {
+            for (int i = 0; i < priorities.length; i++) {
+                if (priorities[i] == queue.peek()) {  //priorities와 queue를 비교
+                    if (location == i) { //priorities의 인덱스인 location과 i를 비
+                        return answer;
+                    }
+                    answer++;
+                    queue.poll();
+                }
+            }
+        }
+        return answer;
+    }
+
+    public int solutionUseClass(int[] priorities, int location) {
 
         //우선순위가 가장 높은 곳에서부터 확인하고, 다음 걸 찾아서 확인하고,.. 이게 아니라
         //값을 출력 후 비교하고 다시 입력, 출력 후 입력, 출력 후 입력,..

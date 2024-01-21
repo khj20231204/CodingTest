@@ -57,7 +57,7 @@
       <recent name="ch3.map_ex" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ch6_Main">
+  <component name="RunManager" selected="Application.ch5_Main">
     <configuration name="ch2_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch2.list_ex.ch2_Main" />
       <module name="CodingTest" />
@@ -119,8 +119,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.ch6_Main" />
         <item itemvalue="Application.ch5_Main" />
+        <item itemvalue="Application.ch6_Main" />
         <item itemvalue="Application.ch4_Main" />
         <item itemvalue="Application.ch3_Main" />
         <item itemvalue="Application.ch2_Main" />
