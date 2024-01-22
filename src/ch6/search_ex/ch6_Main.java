@@ -11,9 +11,13 @@ import java.util.*;
 
 public class ch6_Main {
     public static void main(String[] args){
-        String s = "abc";
-        String s1 = "abd";
+        String s = "abcd";
+        String s1 = "ab";
 
-        System.out.println(s.contains(s1));
+        //System.out.println(s.replaceAll("[^ab]", ""));
+
+        String[] sss = {"BACDE", "CBADF", "AECB", "BDA"};
+        _3_SkillTree ss = new _3_SkillTree();
+        ss.solution2("CBD",sss);
     }
 }
