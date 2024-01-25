@@ -40,6 +40,7 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Application.ExecuteMain.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.ch3_Main.executor": "Run",
     "Application.ch4_Main.executor": "Run",
@@ -58,13 +59,13 @@
       <recent name="ch3.map_ex" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ch7_Main">
-    <configuration name="ch3_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch3.map_ex.ch3_Main" />
+  <component name="RunManager" selected="Application.ExecuteMain">
+    <configuration name="ExecuteMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="algorithm_ex.ExecuteMain" />
       <module name="CodingTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ch3.map_ex.*" />
+          <option name="PATTERN" value="algorithm_ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -126,11 +127,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ExecuteMain" />
         <item itemvalue="Application.ch7_Main" />
         <item itemvalue="Application.ch6_Main" />
         <item itemvalue="Application.ch5_Main" />
         <item itemvalue="Application.ch4_Main" />
-        <item itemvalue="Application.ch3_Main" />
       </list>
     </recent_temporary>
   </component>
