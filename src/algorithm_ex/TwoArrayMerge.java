@@ -2,7 +2,7 @@ package algorithm_ex;
 
 public class TwoArrayMerge {
 
-    static int[] twoArrayMerge(int[] a, int[] b){
+    static int[] twoArrayMerge1(int[] a, int[] b){
         int pA = 0;
         int pB = 0;
         int max = a.length+b.length;
@@ -39,5 +39,29 @@ public class TwoArrayMerge {
             }
         }
         return mergeArray;
+    }
+
+    static int[] twoArrayMerge2(int[] a, int[] b) {
+        int[] arrayMerge = new int[a.length + b.length];
+        int pM = 0;
+        int pA = 0;
+        int pB = 0;
+
+        while(pA<a.length && pB<b.length){
+            if(a[pA] < b[pB]){
+                arrayMerge[pM++] = a[pA++];
+            }else{
+                arrayMerge[pM++] = b[pB++];
+            }
+        }
+
+        while(pA<a.length){
+            arrayMerge[pM++] = a[pA++];
+        }
+
+        while(pB<b.length){
+            arrayMerge[pM++] = b[pB++];
+        }
+        return arrayMerge;
     }
 }
