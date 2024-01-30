@@ -26,9 +26,38 @@ public class ch7_Main {
 
         Integer a = 4;
         Integer b = 6;
-        System.out.println(a.compareTo(b)); //-1 : a-b
-        System.out.println(b.compareTo(a)); //1 : b-a
+        //System.out.println(a.compareTo(b)); //-1 : a-b
+        //System.out.println(b.compareTo(a)); //1 : b-a
 
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+
+        List<Integer> list2 = new ArrayList<>();
+        list2.add(4);
+        list2.add(3);
+        list2.add(2);
+
+        System.out.println("list1:"+list1+" ,list2:"+list2);
+
+        //list1.add(list2); //error
+        list1.addAll(list2);
+
+        System.out.println("list1:"+list1);
+
+        List<Integer> list = new ArrayList<>();
+
+        Random r = new Random();
+        for(int i=0 ; i<20 ; i++){
+            list.add(r.nextInt(30));
+        }
+
+        List<Integer> result = QuckSort.quickSort(list);
+        System.out.println(result);
+    }
+
+    static void useSort(){
         // ------------- 숫자 정렬 ------------------ //
         List<Integer> list = new ArrayList<>();
 
@@ -60,18 +89,18 @@ public class ch7_Main {
             myDataList.add(new MyData(r.nextInt(30)));
         }
 
-       myDataList.sort(new Comparator<MyData>() {
-           @Override
-           public int compare(MyData o1, MyData o2) {
-               return o1.v - o2.v;
-           }
-       });
+        myDataList.sort(new Comparator<MyData>() {
+            @Override
+            public int compare(MyData o1, MyData o2) {
+                return o1.v - o2.v;
+            }
+        });
 
-       //myDataList.sort(Comparator.naturalOrder());
-       myDataList.sort(Comparator.reverseOrder());
-       //Comparator에서 사용하는 건 compare인데 compare에서 Object를 비교하기 위해서 사용하는건
-       //compareTo기 때문에 compareTo로 비교할 수 있으면 사용 가능
-       //compareTo를 재정의 하기위해서 comparable를 상속
-       System.out.println(myDataList);
+        //myDataList.sort(Comparator.naturalOrder());
+        myDataList.sort(Comparator.reverseOrder());
+        //Comparator에서 사용하는 건 compare인데 compare에서 Object를 비교하기 위해서 사용하는건
+        //compareTo기 때문에 compareTo로 비교할 수 있으면 사용 가능
+        //compareTo를 재정의 하기위해서 comparable를 상속
+        System.out.println(myDataList);
     }
 }
