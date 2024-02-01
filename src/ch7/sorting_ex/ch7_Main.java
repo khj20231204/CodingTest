@@ -24,28 +24,6 @@ public class ch7_Main {
 
     public static void main(String[] args){
 
-        Integer a = 4;
-        Integer b = 6;
-        //System.out.println(a.compareTo(b)); //-1 : a-b
-        //System.out.println(b.compareTo(a)); //1 : b-a
-
-        List<Integer> list1 = new ArrayList<>();
-        list1.add(1);
-        list1.add(2);
-        list1.add(3);
-
-        List<Integer> list2 = new ArrayList<>();
-        list2.add(4);
-        list2.add(3);
-        list2.add(2);
-
-        System.out.println("list1:"+list1+" ,list2:"+list2);
-
-        //list1.add(list2); //error
-        list1.addAll(list2);
-
-        System.out.println("list1:"+list1);
-
         List<Integer> list = new ArrayList<>();
 
         Random r = new Random();
@@ -53,8 +31,9 @@ public class ch7_Main {
             list.add(r.nextInt(30));
         }
 
-        List<Integer> result = QuckSort.quickSort(list);
-        System.out.println(result);
+        //List<Integer> result = QuckSort.quickSort(list);
+        _1_RemoveLeastNumber.solution();
+
     }
 
     static void useSort(){
