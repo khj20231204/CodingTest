@@ -20,5 +20,17 @@ public class ArrayEx {
 
         System.out.println("minIntArray:"+minIntArray+" ,minIntegerArray:"+minIntegerArray+" ,minIntegerList:"+minIntegerList);
         //minIntArray:2 ,minIntegerArray:5 ,minIntegerList:4
+
+        Arrays.sort(integerArray, new Comparator<Integer>() {
+            @Override
+            public int compare(Integer o1, Integer o2) {
+                System.out.println("o1:"+o1+" ,o2:"+o2);
+                if(o1 > o2) return 1;
+                else if(o1 < o2) return -1;
+                else return 0;
+            }
+        });
+
+        for(int i : integerArray) System.out.println(i);
     }
 }

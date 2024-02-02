@@ -32,7 +32,10 @@ public class ch7_Main {
         }
 
         //List<Integer> result = QuckSort.quickSort(list);
-        _1_RemoveLeastNumber.solution();
+        System.out.println("");
+        String[] s = {"abbcd","edefd","bdefea","aaef"};
+        s = _1_RemoveLeastNumber.solution2(s,1);
+        for(String s1 :s) System.out.print(s1+" ");
 
     }
 
