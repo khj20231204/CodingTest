@@ -1,50 +1,30 @@
 package ch7.sorting_ex;
 
+import javax.sound.midi.Soundbank;
 import java.util.*;
+import java.util.stream.Collectors;
 
 public class _1_RemoveLeastNumber {
-    //문자를 앞에 붙이기
-    public static String[] solution1(String[] strings, int n){
-        String[] answer = new String[strings.length];
+    public static int[] solution1(int[] arr) {
+        int len = arr.length;
 
-        for(int i=0 ; i<strings.length ; i++) answer[i] = strings[i].charAt(n)+strings[i];
+        if (len <= 1) return new int[]{-1};
 
-        Arrays.sort(answer);
+        int min = Arrays.stream(arr).min().getAsInt();
+        int[] answer = new int[arr.length - 1];
+        int cnt = 0;
+        for (int i : arr) {
+            if (i == min) continue;
 
-        for(int i=0 ; i<strings.length ; i++) answer[i] = answer[i].substring(1,answer[i].length());
-
-        return answer;
-    }
-
-    //for문 이용 아스키코드로 정렬
-    public static String[] solution2(String[] strings, int n) {
-        String[] answer = new String[strings.length];
-
-        Arrays.sort(strings);
-
-        //65~90 97~122
-        int count = 0;
-        for(int i=97 ; i<=122 ; i++){
-            for(int j=0 ; j<strings.length ; j++){
-                if(strings[j].charAt(n) == (char)i ){
-                    answer[count++] = strings[j];
-                }
-            }
+            answer[cnt++] = i;
         }
         return answer;
     }
 
-    //sort재정의
-    public static String[] solution3(String[] strings, int n) {
-        String[] answer = {};
+    public static int[] solution2(int[] arr) {
+        if (arr.length <= 1) return new int[]{-1};
 
-        return answer;
-    }
-
-    //람다
-    public static String[] solution4(String[] strings, int n) {
-        String[] answer = {};
-
-        return answer;
+        int min = Arrays.stream(arr).min().getAsInt();
+        return Arrays.stream(arr).filter(a -> a != min).toArray();
     }
 }
