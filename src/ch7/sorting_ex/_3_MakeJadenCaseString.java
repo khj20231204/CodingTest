@@ -1,31 +1,25 @@
 package ch7.sorting_ex;
 
 public class _3_MakeJadenCaseString {
-
-    public static String solution(String s) {
+    public String solution(String s) {
         String answer = "";
 
-        answer = s.toLowerCase();
-        System.out.println(answer);
+        s = s.toLowerCase();
 
-        char[] charArr = s.toCharArray();
-        int len = charArr.length;
+        char[] charArr = new char[s.length()];
 
-        charArr[3] = 'a'+2;
+        char before = ' ';
+        int cnt = 0;
+        for(char c : s.toCharArray()){
+            if(before == ' ') c = Character.toUpperCase(c);
 
-        boolean check = false;
-        for(int i=0 ; i<len ; i++){
-            if(charArr[i] == ' ') check = true;
-             /*
-            if(check){
-                if(charArr[i+1] != ' ')
-                    charArr[i+1] = charArr[i+1] - 'a';
-            }
-            */
-
+            charArr[cnt++] = c;
+            before = c;
         }
 
         answer = String.valueOf(charArr);
+
+
         return answer;
     }
 }
