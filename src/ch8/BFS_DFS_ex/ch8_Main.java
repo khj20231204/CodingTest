@@ -4,8 +4,15 @@ import java.util.*;
 
 public class ch8_Main {
     public static void main(String[] args){
-        //Node n = new Node("df");
+        BFS b = new BFS();
+        //b.bfs();
 
-        GraphArgol ga = new GraphArgol();
+        DFS d = new DFS();
+        //d.dfs();
+
+        int[][] computers = {{1,1,0},{1,1,0},{0,0,1}};
+
+        _1_Network.solution(3, computers);
+
     }
 }
