@@ -12,7 +12,7 @@ public class ch8_Main {
 
         int[][] computers = {{1,1,0},{1,1,0},{0,0,1}};
 
-        _1_Network.solution(3, computers);
+
 
     }
 }
