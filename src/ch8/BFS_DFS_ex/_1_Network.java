@@ -4,35 +4,31 @@ import java.util.*;
 
 public class _1_Network {
     public int solution(int n, int[][] computers) {
+
         int answer = 0;
+        boolean[] visited = new boolean[n];
 
-        boolean[] check = new boolean[computers[0].length];
-
-        for(int i=0 ; i<computers.length ; i++){
-            if(check[i]) continue;
-
+        for(int i=0 ; i<computers[0].length ; i++){
+            if(visited[i]) continue;
             answer++;
-            ss(computers, check, i);
+            allSearch(computers, visited, i);
         }
-
         return answer;
     }
 
-    void ss(int[][] computers, boolean[] check, int i){
-        Queue<Integer> queue = new LinkedList<>();
+    void allSearch(int[][] computers, boolean[] visited, int i){
+        Queue<Integer> q = new LinkedList<>();
 
-        queue.offer(i);
+        q.offer(i);
 
-        while(!queue.isEmpty()){
-            int tmp = queue.poll();
-            System.out.println(tmp);
+        while(!q.isEmpty()){
+            i = q.poll();
 
-            for(int j=0 ; j<computers[tmp].length ; j++){
-                if(check[i]) continue;
-                if(computers[tmp][j] == 1) {
-                    queue.offer(j);
-                    check[j] = true;
-                }
+            visited[i] = true;
+            for(int j=0 ; j<computers[i].length ; j++){
+                if(visited[j]) continue;
+
+                if(computers[i][j] == 1) q.offer(j);
             }
         }
     }
