@@ -35,10 +35,6 @@ public class _4_MapShortestDistance {
         Position(Location l, int s){
             location = l; steps = s;
         }
-
-        Location left(){
-            return new Location(x-1,y);
-        }
     }
 
     public int solution(int[][] maps) {
@@ -53,7 +49,7 @@ public class _4_MapShortestDistance {
         while(!queue.isEmpty()){
             Position now = queue.poll();
 
-            //벽, 맵 밖, 중복은 체크 안한다
+            //벽, 맵 밖, 중복은 체크 안한다 16:25
 
 
             if(now.location.equals(target)){

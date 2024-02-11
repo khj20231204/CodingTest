@@ -3,30 +3,38 @@ package ch8.BFS_DFS_ex;
 import java.util.*;
 
 public class _1_Network {
-
     public int solution(int n, int[][] computers) {
-        //최초방문시 answer증가
-        //방문 후 연결된 node전부 visited = true
         int answer = 0;
-        boolean[] visited = new boolean[n];
 
-        for (int i = 0; i < n; i++) {
+        boolean[] check = new boolean[computers[0].length];
+
+        for(int i=0 ; i<computers.length ; i++){
+            if(check[i]) continue;
+
             answer++;
-            allConnected(computers, visited, i);
+            ss(computers, check, i);
         }
+
         return answer;
     }
 
-    void allConnected(int[][] computers, boolean[] visited, int c){
-        Queue<Integer> q = new LinkedList<>();
-        q.offer(c);
-        while(!q.isEmpty()) {
-            int i = q.poll();
-            visited[i] = true;
-            for (int j = 0; j < computers[i].length; j++) {
-                if (visited[j]) continue;
-                if (computers[i][j] == 1) q.offer(j);
+    void ss(int[][] computers, boolean[] check, int i){
+        Queue<Integer> queue = new LinkedList<>();
+
+        queue.offer(i);
+
+        while(!queue.isEmpty()){
+            int tmp = queue.poll();
+            System.out.println(tmp);
+
+            for(int j=0 ; j<computers[tmp].length ; j++){
+                if(check[i]) continue;
+                if(computers[tmp][j] == 1) {
+                    queue.offer(j);
+                    check[j] = true;
+                }
             }
         }
     }
 }
+
