@@ -22,12 +22,19 @@ public class StringCompare {
         int count=0;
         Queue<Character> s1Q = new LinkedList<>();
         Queue<Character> s2Q = new LinkedList<>();
-        for(int i=0 ; i<s1CharArr.length ; i++){
 
-            for(int j=0 ; j<s2CharArr.length ; j++){
+        s1Q.offer(s1CharArr[0]);
+        s2Q.offer(s2CharArr[0]);
 
+        while(!s1Q.isEmpty()){
+
+            char s1q = s1Q.poll();
+
+            for(char c : s2CharArr){
+                if(s1q == c){
+
+                }
             }
-
         }
 
         return "";
