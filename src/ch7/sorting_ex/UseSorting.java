@@ -6,7 +6,25 @@ import java.util.List;
 import java.util.Random;
 
 public class UseSorting {
-    static void useSort(){
+    private class MyData implements Comparable{
+        int v;
+        public MyData(int v){
+            this.v = v;
+        }
+
+        public String toString(){
+            //return "" + v;
+            return String.valueOf(v);
+        }
+        @Override
+        public int compareTo(Object o) {
+            //return ((MyData)o).v - this.v;
+            //return this.v - ((MyData)o).v;
+            return Integer.compare(v, ((MyData)o).v);
+        }
+    }
+
+    void useSort(){
         // ------------- 숫자 정렬 ------------------ //
         List<Integer> list = new ArrayList<>();
 
@@ -35,6 +53,7 @@ public class UseSorting {
         List<MyData> myDataList = new ArrayList<>();
 
         for(int i=0 ; i<20 ; i++){
+            myDataList.add(new MyData(r.nextInt(30)));
             myDataList.add(new MyData(r.nextInt(30)));
         }
 

@@ -9,6 +9,9 @@ public class ch9_Main {
 
         HeapEx he = new HeapEx();
         //he.heapEx();;
-        he.heapUseMyData();
+        //he.heapUseMyData();
+
+        TreeEx2 te2 = new TreeEx2();
+        te2.treeEx2();
     }
 }

@@ -45,7 +45,7 @@ public class HeapEx {
         System.out.println(list);
     }
 
-    class MyData implements Comparable<MyData>{
+    private class MyData implements Comparable<MyData>{
 
         int v;
 

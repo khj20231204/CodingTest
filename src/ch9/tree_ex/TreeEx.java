@@ -74,7 +74,7 @@ public class TreeEx {
         System.out.println(data4);
     }
 
-    class MyData{  //MyData
+    private class MyData{  //MyData
         int v;
 
         public MyData(int v){ this.v = v;}
@@ -85,7 +85,7 @@ public class TreeEx {
         }
     }
 
-    class MyDataTreeSet implements Comparable<MyDataTreeSet>{  //TreeSet
+    private class MyDataTreeSet implements Comparable<MyDataTreeSet>{  //TreeSet
         int v;
 
         public MyDataTreeSet(int v){ this.v = v;}
@@ -102,7 +102,7 @@ public class TreeEx {
         }
     }
 
-    class MyDataHashSet{ //HashSet
+    private class MyDataHashSet{ //HashSet
         int v;
 
         public MyDataHashSet(int v){ this.v = v;}
