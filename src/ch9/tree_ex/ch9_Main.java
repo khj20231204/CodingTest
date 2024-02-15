@@ -11,7 +11,18 @@ public class ch9_Main {
         //he.heapEx();;
         //he.heapUseMyData();
 
-        TreeEx2 te2 = new TreeEx2();
-        te2.treeEx2();
+        int[][] twoArray = {{3, 6}, {4, 7}, {5, 2}};
+
+        for(int[] two : twoArray){
+            System.out.println("two[0]:"+two[0]);
+            System.out.println("two[1]:"+two[1]);
+        }
+
+
+
+        int[] oneArray = {4,2,1,5};
+        for(int one : oneArray){
+            System.out.println("one:"+one);
+        }
     }
 }
