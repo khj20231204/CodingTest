@@ -1,5 +1,7 @@
 package ch9.tree_ex;
 
+import java.util.*;
+
 public class ch9_Main {
 
     public static void main(String[] args){
@@ -11,18 +13,14 @@ public class ch9_Main {
         //he.heapEx();;
         //he.heapUseMyData();
 
-        int[][] twoArray = {{3, 6}, {4, 7}, {5, 2}};
+        List<Integer> list = new LinkedList<>();
 
-        for(int[] two : twoArray){
-            System.out.println("two[0]:"+two[0]);
-            System.out.println("two[1]:"+two[1]);
-        }
+        list.add(3);
+        list.add(2);
+        list.add(4);
 
-
-
-        int[] oneArray = {4,2,1,5};
-        for(int one : oneArray){
-            System.out.println("one:"+one);
+        for(int i : list){
+            System.out.println(i);
         }
     }
 }
