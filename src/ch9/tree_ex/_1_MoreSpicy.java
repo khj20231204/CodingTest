@@ -29,7 +29,6 @@ public class _1_MoreSpicy {
          answer++;
          if(s3 >= K) break;
 
-
       }
 
       if(heap.peek() < K) return -1;

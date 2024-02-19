@@ -59,8 +59,6 @@ public class _2_MostFarNode {
 
       return answer;
    }
-
-
    class Node2{
       int count = 0;
       int v;
@@ -111,6 +109,59 @@ public class _2_MostFarNode {
       for(Node2 m : list){
 
          if(m.count >= maxLink) answer++;
+      }
+      return answer;
+   }
+
+
+   class Node3{
+      int v;
+      boolean visited = false;
+      int depth = 0;
+      List<Node3> line = new LinkedList<>();
+      public Node3(int v){this.v = v;}
+   }
+
+   public int solution3(int n, int[][] edge) {
+      int answer = 0;
+
+      List<Node3> list = new ArrayList<>();
+      for(int i=0 ; i<n ; i++){
+         list.add(new Node3(i+1));
+      }
+
+      for(int[] i : edge){
+         Node3 n1 = list.get(i[0]-1);
+         Node3 n2 = list.get(i[1]-1);
+
+         n1.line.add(n2);
+         n2.line.add(n1);
+      }
+
+      //탐색
+      Node3 one = list.get(0);
+      one.visited = true;
+      Queue<Node3> q = new LinkedList<>();
+      q.offer(one);
+      int maxDepth = 0;
+
+      while(!q.isEmpty()){
+         Node3 node = q.poll();
+         //1) node.depth++;
+         for(Node3 m : node.line){
+            if(m.visited) continue;
+
+            m.visited = true;
+            //2)
+            m.depth = node.depth+1;
+            System.out.println("m.v:"+m.v+" ,m.depth:"+m.depth);
+            if(m.depth > maxDepth) maxDepth = m.depth;
+            q.offer(m);
+         }
+      }
+
+      for(Node3 m : list){
+         if(m.depth == maxDepth) answer++;
       }
 
       return answer;
