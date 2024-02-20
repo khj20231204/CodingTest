@@ -12,7 +12,17 @@ public class ch2_Main {
         _2_order_check oc = new _2_order_check();
         //boolean oc_answer = oc.solution1(matter);
 
-        List_exercise();
+        //List_exercise();
+
+        String s = "5256";
+        Integer in = Integer.valueOf(s);
+        int in2 = Integer.valueOf(s);
+        Double d = Double.valueOf(s);
+        double d2 = Double.valueOf(s);
+        Long l = Long.valueOf(s);
+        long l2 = Long.valueOf(s);
+
+        System.out.println(in + " in2:" + in2 + " d:" + d + " d2:"+d2+ " l:"+l+" l2"+l2);
     }
 
     static void List_exercise(){
@@ -38,6 +48,9 @@ public class ch2_Main {
         str.add("dd");
         System.out.println(str);
         str.remove(1);
-        System.out.println(str);;
+        System.out.println(str);
+
+
+
     }
 }

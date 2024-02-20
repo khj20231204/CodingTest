@@ -43,7 +43,7 @@
     "Application.ExecuteMain.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.ch0_Main.executor": "Run",
-    "Application.ch2_Main.executor": "Debug",
+    "Application.ch2_Main.executor": "Run",
     "Application.ch3_Main.executor": "Run",
     "Application.ch4_Main.executor": "Run",
     "Application.ch5_Main.executor": "Run",
