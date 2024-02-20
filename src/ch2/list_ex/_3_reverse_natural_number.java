@@ -12,16 +12,5 @@ n	    return
 import java.util.*;
 
 public class _3_reverse_natural_number {
-    public int[] solution1(long n) {
-        LinkedList<Integer> list = new LinkedList<>();
 
-        while(n>0){
-            list.add((int)(n % 10));
-            n = n/10;
-            System.out.println("n:"+n);
-        }
-
-        int[] answer = list.stream().mapToInt(Integer::intValue).toArray();
-        return answer;
-    }
 }

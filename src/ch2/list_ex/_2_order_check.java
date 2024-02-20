@@ -10,6 +10,49 @@ import java.util.*;
 import java.util.stream.*;
 
 public class _2_order_check {
+    public boolean solution1(int[] arr){
+        boolean answer = true;
 
+        int len = arr.length;
+        System.out.println(len);
+
+        List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
+
+        for(int i=1 ; i<=len ; i++)
+            if(!list.contains(i))
+                answer = false;
+
+        return answer;
+    }
+
+    public boolean solution2(int[] arr){
+        boolean answer = true;
+
+        int len = arr.length;
+        Arrays.sort(arr);
+
+        for(int i=0 ; i<len ; i++) {
+            if(arr[i] != i+1){
+                answer = false;
+                break;
+            }
+        }
+
+        return answer;
+    }
+
+    public boolean solution3(int[] arr){
+        boolean answer = true;
+
+        int[] arr2 = new int[arr.length];
+
+        for(int i=0 ; i<arr.length ; i++){
+            arr2[i] = i+1;
+        }
+
+        Arrays.sort(arr);
+
+        return Arrays.equals(arr, arr2);
+    }
 
 }
