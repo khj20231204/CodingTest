@@ -1,8 +1,7 @@
 package ch3.map_ex;
 
-import java.util.Collection;
-import java.util.HashMap;
-import java.util.Set;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class MapEx {
 
@@ -81,5 +80,34 @@ public class MapEx {
         System.out.println("--------- remove 시작 ---");
         objMap.remove(new MyData(3));
         System.out.println("remove:"+objMap.get(new MyData(3)));
+    }
+
+    public void mapToArray(){
+
+        Map<String,Integer> map = new HashMap<>();
+        map.put("A",19);
+        map.put("B",300);
+        map.put("C",56);
+
+        //key -> array
+        String[] str = map.keySet().toArray(new String[0]); //A B C
+
+        //key -> list
+        ////1)List선언 시 이용
+        List<String> list1 = new ArrayList<>(map.keySet()); //[A, B, C]
+        ////2)stream 이용
+        List<String> list2 = map.keySet().stream().collect(Collectors.toList());
+        list2.add("addList"); //[A, B, C, addList]
+
+        //values -> array
+        Integer[] inte = map.values().toArray(new Integer[0]);
+        int[] inte2 = Arrays.stream(inte).mapToInt(Integer::intValue).toArray(); //19 300 56
+
+        //values -> list
+        ////1)List선언 시 이용
+        List<Integer> list3 = new ArrayList<>(map.values()); //[19, 300, 56]
+        ////2)stream 이용
+        List<Integer> list4 = map.values().stream().collect(Collectors.toList());
+        list3.add(22); //[19, 300, 56, 22]
     }
 }
