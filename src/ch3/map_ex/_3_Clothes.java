@@ -1,7 +1,7 @@
 package ch3.map_ex;
 import java.util.*;
 public class _3_Clothes {
-    public int solution(String[][] clothes) {
+    public int solution1(String[][] clothes) {
 
         HashMap<String,Integer> map = new HashMap<>();
 
@@ -23,5 +23,49 @@ public class _3_Clothes {
         }
 
         return count-1;
+    }
+
+    class Cloth{
+        String title;
+        int count=1;
+
+        public Cloth(String t){title = t;}
+
+        public String toString(){
+            return "title:"+title+" ,count:"+count;
+        }
+
+        public boolean equals(Object o){
+            return title.equals(((Cloth)o).title);
+        }
+    }
+
+    public int solution2(String[][] clothes) {
+
+        List<Cloth> list = new ArrayList<>();
+
+        for(String[] s : clothes){
+
+            if(list.contains(new Cloth(s[1]))){
+                int idx = list.indexOf(new Cloth(s[1]));
+                Cloth c = list.get(idx);
+                c.count = c.count+1;
+                continue;
+            }
+
+            list.add(new Cloth(s[1]));
+        }
+
+        int answer = 1;
+        if(list.size() == 1) {
+            answer = (list.get(0)).count;
+        }else{
+            for(Cloth c : list){
+                answer *= (c.count+1);
+            }
+            answer--;
+        }
+
+        return answer;
     }
 }
