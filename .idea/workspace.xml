@@ -62,7 +62,7 @@
       <recent name="ch3.map_ex" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ch2_Main">
+  <component name="RunManager" selected="Application.ch4_Main">
     <configuration name="ch2_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ch2.list_ex.ch2_Main" />
       <module name="CodingTest" />
@@ -89,12 +89,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ch7_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch7.sorting_ex.ch7_Main" />
+    <configuration name="ch4_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch4.set_ex.ch4_Main" />
       <module name="CodingTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ch7.sorting_ex.*" />
+          <option name="PATTERN" value="ch8.BFS_DFS_ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ch4_Main" />
         <item itemvalue="Application.ch2_Main" />
         <item itemvalue="Application.ch3_Main" />
         <item itemvalue="Application.ch9_Main" />
         <item itemvalue="Application.ch8_Main" />
-        <item itemvalue="Application.ch7_Main" />
       </list>
     </recent_temporary>
   </component>

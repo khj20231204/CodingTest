@@ -5,6 +5,9 @@ import java.util.*;
 public class _1_RightParenthesis {
 
     boolean solution(String s) {
+
+
+
         //앞에 걸 뺀다 queue
         Queue<Integer> queue = new LinkedList<>();
 
