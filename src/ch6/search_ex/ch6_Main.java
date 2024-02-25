@@ -18,6 +18,8 @@ public class ch6_Main {
 
         String[] sss = {"BACDE", "CBADF", "AECB", "BDA"};
         _3_SkillTree ss = new _3_SkillTree();
-        ss.solution2("CBD",sss);
+        //ss.solution2("CBD",sss);
+
+
     }
 }

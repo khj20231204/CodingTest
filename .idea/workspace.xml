@@ -38,25 +38,25 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.ExecuteMain.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch0_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch2_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch3_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch4_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch5_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch6_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch7_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch8_Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ch9_Main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.fonts.default&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.ExecuteMain.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.ch0_Main.executor": "Run",
+    "Application.ch2_Main.executor": "Run",
+    "Application.ch3_Main.executor": "Run",
+    "Application.ch4_Main.executor": "Run",
+    "Application.ch5_Main.executor": "Run",
+    "Application.ch6_Main.executor": "Run",
+    "Application.ch7_Main.executor": "Run",
+    "Application.ch8_Main.executor": "Run",
+    "Application.ch9_Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "kotlin-language-version-configured": "true",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="ExtractSuperBase.RECENT_KEYS">
       <recent name="ch3.map_ex" />
@@ -102,12 +102,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ch8_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch8.BFS_DFS_ex.ch8_Main" />
+    <configuration name="ch5_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch5.stackqueue_ex.ch5_Main" />
       <module name="CodingTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ch8.BFS_DFS_ex.*" />
+          <option name="PATTERN" value="ch5.stackqueue_ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -131,10 +131,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.ch4_Main" />
+        <item itemvalue="Application.ch5_Main" />
         <item itemvalue="Application.ch2_Main" />
         <item itemvalue="Application.ch3_Main" />
         <item itemvalue="Application.ch9_Main" />
-        <item itemvalue="Application.ch8_Main" />
       </list>
     </recent_temporary>
   </component>
