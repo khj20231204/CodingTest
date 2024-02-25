@@ -84,4 +84,61 @@ class MyData{
         String str = "process:" + process + " ,location:"+ location;
         return str;
     }
+
+    class ReserveQ{
+        int value;
+        boolean target;
+
+        public ReserveQ(int v, boolean t){
+            this.value = v;
+            this.target = t;
+        }
+
+        public String toString(){
+            return "value:"+value+" ,target:"+target;
+        }
+    }
+
+    public int solution3(int[] priorities, int location) {
+
+        Queue<ReserveQ> q = new LinkedList<>();
+
+        int cnt = 0;
+        for(int i : priorities){
+            q.offer(new ReserveQ(i, cnt == location));
+            cnt++;
+        }
+
+        //System.out.println(q);
+
+        int answer = 1;
+        while(!q.isEmpty()){
+
+            //최대값구하기
+            int max = getMax(q);
+
+            ReserveQ rq = q.poll();
+
+            //최대값이면서 타켓이면 리턴
+            if(rq.value==max && rq.target) return answer;
+
+                //최대값이면 poll하고 answer증가
+            else if(rq.value==max) answer++;
+
+                //최대값보다 작으면 offer
+            else q.offer(rq);
+        }
+
+        return answer;
+    }
+
+    int getMax(Queue<ReserveQ> q){
+
+        int max = 0;
+        for(ReserveQ r : q){
+            if(max < r.value) max = r.value;
+        }
+
+        return max;
+    }
 }
