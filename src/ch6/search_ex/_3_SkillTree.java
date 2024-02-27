@@ -37,44 +37,52 @@ public class _3_SkillTree {
     }
 
     public int solution3(String skill, String[] skill_trees) {
-        int answer = 0;
 
+        //skill을 queue에 넣고 queue 출력 값으로 skill 확인
+        //skill_trees에 skill이 몇 개 있는지 갯수확인
+        //skill_trees에 있는 skill의 순서와 queue에 있는 skill이 일치해서
+        //queue에서 출력할 때마다 1씩 증가, 특정 값이 순서대로 빠져나오는 queue성질 이용
+        //queue 출력 값과 skill 갯수 일치하면 answer증가
 
+        //skill을 queue에 입력
+        Queue<Character> skillQueue = new LinkedList<>();
 
-        Queue<Character> queue = new LinkedList<>();
+        int answer = 0; //가능한 스킬트리
 
-        //skill로부터 queue생성
-        queueMake(queue,skill);
-
+        //skill_trees에 skill 몇개 있는지 확인
         for(int i=0 ; i<skill_trees.length ; i++){
-            int sCount = 0; //skill_trees에 속해있는 skill 갯수
-            for(char c : skill_trees[i].toCharArray()){
-                if(queue.contains(c)) ++sCount;
+
+            makeQueue(skillQueue, skill); //skillQueue셋팅
+
+            int sCount = 0; //skill_trees에 있는 skill 갯수
+            int count = 0; //skill_trees에서 차례로 빠져나온 skill 갯수
+
+            for(Character c : skill_trees[i].toCharArray()){
+                if(skillQueue.contains(c)) sCount++;
             }
 
-            int count = 0; //skill에서 순서대로 빠져나온 갯수
-            for(char c : skill_trees[i].toCharArray()){
-                if(!queue.isEmpty()){ //CBD가 다 빠졌을 때 queue.peek()자체가 에러발생
-                    if(c == queue.peek()) {
-                        queue.poll();
+            for(Character c : skill_trees[i].toCharArray()){
+                if(!skillQueue.isEmpty()){
+                    if(c == skillQueue.peek()){ //skill_trees의 skill과 skill의 출력 순서가 같은지 peek로 확인
+                        skillQueue.poll();
                         count++;
                     }
                 }
             }
 
             if(sCount == count) answer++;
-
-            queueMake(queue,skill); //남아있는 queue를 비우고 다시 채움
         }
+
         return answer;
     }
 
-    public void queueMake(Queue<Character> queue, String skill) {
+    void makeQueue(Queue<Character> q, String s){
+        while(!q.isEmpty()){
+            q.poll();
+        }
 
-        while (!queue.isEmpty()) queue.poll();
-
-        for (char c : skill.toCharArray()) {
-            queue.offer(c);
+        for(Character c : s.toCharArray()){
+            q.offer(c);
         }
     }
 }
