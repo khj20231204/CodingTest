@@ -41,8 +41,11 @@ public class UseSorting {
         list.sort(new Comparator<Integer>() {
             @Override
             public int compare(Integer o1, Integer o2) {
+                //return o1.intValue() - o2.intValue();
                 return o1.compareTo(o2);
-                //return o1-o2;
+                //o1이 compareTo를 사용하기 위해선
+                //인자 (Integer o1,..) 에서 Integer가 comparable을 extends해야 한다
+                //실제 Integer는 comparable을 상속 받았다
             }
         });
 
