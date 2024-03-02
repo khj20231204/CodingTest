@@ -26,6 +26,11 @@ public class BFS {
 
         Nodes target = E;
         while(!queue.isEmpty()){
+            /*
+           1)Queue에서 꺼내고
+           2)break 조건 확인
+           3)for문으로 연결된 노드 큐에 입력
+            */
             Nodes q = queue.poll();
             q.setVisited();
             System.out.println(q.toString());
