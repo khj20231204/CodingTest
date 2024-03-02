@@ -21,6 +21,9 @@ public class ch8_Main {
         //d.dfs();
 
         BFS2 b2 = new BFS2();
-        b2.bfs2();
+        //b2.bfs2();
+
+        BFS3 b3 = new BFS3();
+        b3.bfs3();
     }
 }
