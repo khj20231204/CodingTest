@@ -45,7 +45,7 @@ public class _1_MoreSpicy {
 
       return answer;
    }
-   public int Mysolution_Error(int[] scoville, int K) {
+   public int solution_error1(int[] scoville, int K) {
       int answer = 0;
 
       Stack<Integer> stack = new Stack<>();
@@ -67,6 +67,7 @@ public class _1_MoreSpicy {
 
             stack.push(i+j*2);
             Collections.sort(stack, Collections.reverseOrder());
+            System.out.println("stack:"+stack);
             count++;
 
          }else{
@@ -77,7 +78,7 @@ public class _1_MoreSpicy {
       return answer;
    }
 
-   public int solution_error(int[] scoville, int K) {
+   public int solution_error2(int[] scoville, int K) {
       int answer = 0;
 
       Stack<Integer> stack = new Stack<>();
