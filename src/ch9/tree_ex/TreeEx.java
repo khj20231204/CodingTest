@@ -62,7 +62,7 @@ public class TreeEx {
         System.out.println(data3);
 
         ////MyDataHashSet 사용
-        //hashcode와 equals를 오버라이딩
+        //hashcode와  오버라이딩
         Set<MyDataHashSet> data4 = new HashSet<>();
 
         data4.add(new MyDataHashSet(3));
