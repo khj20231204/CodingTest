@@ -87,4 +87,49 @@ public class _1_MoreSpicy {
 
       return answer;
    }
+
+   public int solution_error(int[] scoville, int K) {
+      int answer = 0;
+
+      Stack<Integer> stack = new Stack<>();
+
+      for(int i : scoville){
+         stack.push(i);
+      }
+
+      Collections.sort(stack, Collections.reverseOrder());
+
+      int count = 0;
+        /*
+        while(!stack.isEmpty()){
+            if(stack.size() <= 1) return -1;
+
+            int i = stack.pop();
+            if(i < K){
+
+                int j = stack.pop();
+
+                stack.push(i+j*2);
+                Collections.sort(stack, Collections.reverseOrder());
+                count++;
+
+            }else{
+                return count;
+            }
+        }
+        */
+
+      //int count = 0;
+      while(stack.size()>=2 && stack.peek() < K){
+         int j = stack.pop();
+         int l = stack.pop();
+
+         stack.push(j+(l*2));
+         Collections.sort(stack, Collections.reverseOrder());
+         count++;
+      }
+
+      if(stack.size() <= 1) return -1;
+      return count;
+   }
 }
