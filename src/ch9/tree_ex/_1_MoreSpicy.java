@@ -56,7 +56,7 @@ public class _1_MoreSpicy {
 
       Collections.sort(stack, Collections.reverseOrder());
 
-      int count = 0;
+      int count = 1;
       while(!stack.isEmpty()){
          if(stack.size() <= 1) return -1;
 
