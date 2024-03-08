@@ -48,7 +48,6 @@ public class _2_MostFarNode2 {
          for(Node t : node.list){
             if(!t.depthVisited) {
                t.depth = node.depth+1;
-               System.out.println("first t.v:"+t.v+" ,node.depth:"+node.depth);
             }
             t.depthVisited = true;
             if(t.depth > max) max=t.depth;
