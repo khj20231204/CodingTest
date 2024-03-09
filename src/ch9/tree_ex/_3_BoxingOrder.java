@@ -4,66 +4,49 @@ import java.util.*;
 public class _3_BoxingOrder {
 
    class Node{
-      int v;
-      int win = 0;
-      int lose = 0;
+      int n;
+      int win=0, lose=0;
       boolean visited = false;
-      List<Node> link = new LinkedList<>();
+      List<Node> links = new LinkedList<>();
 
-      public Node(int v){
-         this.v = v;
-      }
-
-      @Override
-      public String toString(){
-         return "v:"+v+" ,link.size():"+link.size()+" ,win:"+win +" ,lose:"+lose;
-      }
+      Node(int n){this.n = n;}
    }
-
    public int solution(int n, int[][] results) {
-      int answer = 0;
+      List<Node> list = new ArrayList<>();
+      for(int i=0 ; i<n ; i++) list.add(new Node(i+1));
 
-      List<Node> list = new LinkedList<>();
-      for(int i=0 ; i<n ; i++){
-         list.add(new Node(i+1));
+      for(int[] result : results){
+         Node winner = list.get(result[0]-1);
+         Node loser = list.get(result[1]-1);
+
+         winner.links.add(loser);
       }
 
-      for(int[] r : results){
-         Node n1 = list.get(r[0]-1);
-         Node n2 = list.get(r[1]-1);
+      for(Node winner : list){
+         for(Node node : list) {node.visited = false;}
 
-         n1.link.add(n2);
-      }
+         Queue<Node> queue = new LinkedList<>();
+         winner.visited = true;
+         queue.offer(winner);
 
-      //System.out.println(list.toString());
+         while(!queue.isEmpty()){
+            Node now = queue.poll();
 
-      for(Node node : list){
-         Queue<Node> q = new LinkedList<>();
-         for(Node m : list) m.visited = false;
+            for(Node loser : now.links){
+               if(loser.visited) continue;
+               loser.visited = true;
 
-         q.offer(node);
+               winner.win += 1 ;
+               loser.lose += 1;
 
-         while(!q.isEmpty()){
-            Node tmp = q.poll();
-
-            for(Node tmpLink : tmp.link){
-
-               if(tmpLink.visited) continue;
-
-               node.win++;
-               tmpLink.lose++;
-               tmpLink.visited = true;
-
-               q.offer(tmpLink);
+               queue.offer(loser);
             }
          }
       }
 
-      System.out.println(list.toString());
-
+      int answer = 0;
       for(Node node : list){
-         int sum = node.win+node.lose;
-         if(sum == n-1) answer++;
+         if(node.win + node.lose == n-1) answer++;
       }
 
       return answer;

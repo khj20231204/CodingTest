@@ -1,7 +1,6 @@
 package ch9.tree_ex;
 import java.util.*;
 public class _3_BoxingOrder2 {
-
    class Node{
       int v;
       boolean visited = false;
@@ -35,7 +34,6 @@ public class _3_BoxingOrder2 {
 
          nodeWin.list.add(nodeLose);
       }
-
       //탐색
       Queue<Node> q = new LinkedList<>();
       for(Node now : list){
@@ -45,35 +43,35 @@ public class _3_BoxingOrder2 {
          q.offer(now);
          while(!q.isEmpty()){
             Node node = q.poll();
+            /*
+            q에서 가져온 걸 visited로 거르는데 이 부분이 없으면 정상 동작한다
             if(node.visited) continue;
             node.visited = true;
-            //System.out.println("v:"+now.v+" ,win:"+now.win+" ,lose:"+now.lose);
+            탐색할 때 visited로 거를지, 아니면 밑에 for문에서 큐에 offer할 때
+            visited로 거를지, 아니면 두 군데 전부 거를지 판단해야 한다.
+            */
 
             for(Node no : node.list){
                if(no.visited) continue;
+               no.visited = true;
                now.win++;
                no.lose++;
-               System.out.println("now.v:"+now.v+" ,win:"+now.win+" ,lose:"+now.lose+" ,no.v:"+no.v+" ,no.lose:"+no.lose);
 
                q.offer(no);
-
             }
          }
       }
 
       for(Node no : list){
-         //System.out.println("v:"+no.v+" ,win:"+no.win+" ,lose:"+no.lose);
+         if((no.win + no.lose) == (n-1)) answer++;
       }
-
       return answer;
    }
-
    void makeQueueEmpty(Queue<Node> q){
       while(!q.isEmpty()){
          q.poll();
       }
    }
-
    void makeVisitedFalse(List<Node> list){
       for(Node no : list) no.visited = false;
    }
