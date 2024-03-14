@@ -62,13 +62,13 @@
       <recent name="ch3.map_ex" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.ch9_Main">
-    <configuration name="ch2_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ch2.list_ex.ch2_Main" />
+  <component name="RunManager" selected="Application.ch3_Main">
+    <configuration name="ch3_Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ch3.map_ex.ch3_Main" />
       <module name="CodingTest" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ch2.list_ex.*" />
+          <option name="PATTERN" value="ch3.map_ex.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -130,11 +130,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.ch3_Main" />
         <item itemvalue="Application.ch9_Main" />
         <item itemvalue="Application.ch8_Main" />
         <item itemvalue="Application.ch4_Main" />
         <item itemvalue="Application.ch5_Main" />
-        <item itemvalue="Application.ch2_Main" />
       </list>
     </recent_temporary>
   </component>

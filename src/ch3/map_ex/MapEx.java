@@ -110,4 +110,24 @@ public class MapEx {
         List<Integer> list4 = map.values().stream().collect(Collectors.toList());
         list3.add(22); //[19, 300, 56, 22]
     }
+
+    void mapEx2(){
+        Map<Integer, String> map = new HashMap<>();
+
+        map.put(1,"star");
+        map.put(2,"net");
+        map.put(3,"car");
+
+        map.get(3);
+        System.out.println(map);
+
+        System.out.println(map.containsKey(5));
+        System.out.println(map.containsValue("car"));
+
+        map.put(5,map.getOrDefault(5,"tt"));
+
+        map.replace(5,"airplane");
+
+        System.out.println(map);
+    }
 }
