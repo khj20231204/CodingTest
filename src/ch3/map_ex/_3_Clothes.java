@@ -68,4 +68,24 @@ public class _3_Clothes {
 
         return answer;
     }
+
+    public int solution3(String[][] clothes) {
+        int answer = 1;
+
+        Map<String,Integer> map = new HashMap<>();
+        for(String[] s : clothes){
+            map.put(s[1], map.getOrDefault(s[1],0)+1);
+        }
+
+        if(map.size() == 1){
+            return map.values().iterator().next();
+        }else{
+            Iterator<Integer> iter = map.values().iterator();
+            while(iter.hasNext()){
+                answer *= iter.next()+1;
+            }
+        }
+
+        return answer-1;
+    }
 }
