@@ -6,6 +6,24 @@ import java.util.*;
 
 public class _3_StockPrice {
     public int[] solution(int[] prices) {
+        int[] answer = new int[prices.length];
+
+        for(int i=0 ; i<prices.length ; i++){
+            int price = prices[i];
+            int sum = 0;
+
+            //i가 4면 밑에 for문이 안돈다
+            for(int j=i+1; j<prices.length ; j++){
+                sum++;
+
+                if(price > prices[j]) break;
+            }
+            answer[i] = sum;
+        }
+        return answer;
+    }
+
+    public int[] solution2(int[] prices) {
 
         int[] answer = {};
 
