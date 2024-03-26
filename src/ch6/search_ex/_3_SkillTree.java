@@ -129,4 +129,45 @@ public class _3_SkillTree {
 
         return answer;
     }
+
+    public int solution5(String skill, String[] skill_trees) {
+        int answer = 0;
+
+        //1)skill 따로 저장
+        //2)skill_trees에  skill 갯수 저장
+        //3)skill_trees 돌면서 skill 순서에 따라 갯수 저장
+
+        //1)
+        char[] skillList = skill.toCharArray();
+
+        for(int i=0 ; i<skill_trees.length ; i++){ //"BACDE"
+            String tree = skill_trees[i];
+
+            //2)
+            int cnt = 0;
+            for(char t : tree.toCharArray()){ //'B' 'A' 'C' 'D' 'E'
+
+                for(char s : skillList){ //skill - 'C' 'B' 'D'
+                    if(t == s) cnt++;
+                }
+            }
+
+            //3)
+            int idx = 0;
+            int sum = 0;
+            for(char t : tree.toCharArray()){ //'B' 'A' 'C' 'D' 'E'
+                if(skillList.length > idx){
+                    if(skillList[idx] == t){
+                        idx++;
+                        sum++;
+                    }
+                }
+            }
+
+            System.out.println("cnt:"+cnt+" ,sum:"+sum);
+            if(cnt == sum) answer++;
+        }
+
+        return answer;
+    }
 }
