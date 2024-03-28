@@ -37,6 +37,8 @@ public class BFS {
 
             if(q.equals(target)) break;
 
+            //forEach(queue::offer)
+            //q에 연결된 nodeList를 forEach를 사용해서 전부 queue에 offer한다
             q.nodeList.stream().filter(i -> !queue.contains(i) && !i.getVisited()).forEach(queue::offer);
 
         }
