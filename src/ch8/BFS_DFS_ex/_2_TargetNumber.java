@@ -29,27 +29,5 @@ public class _2_TargetNumber {
         }
     }
 
-    public int solution2(int[] numbers, int target) {
-        int answer = 0;
-        Queue<Number> queue = new LinkedList<>();
-        queue.add(new Number(0, -numbers[0]));
-        queue.add(new Number(0, numbers[0]));
 
-        while (!queue.isEmpty()) {
-            Number cur = queue.poll();
-
-            if (cur.idx == (numbers.length - 1) && cur.sum == target) {
-                answer++;
-            }
-
-            int next = cur.idx + 1;
-            if (next < numbers.length) {
-                queue.add(new Number(next, cur.sum - numbers[next]));
-                queue.add(new Number(next, cur.sum + numbers[next]));
-            }
-
-        }
-
-        return answer;
-    }
 }
