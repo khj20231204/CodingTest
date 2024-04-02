@@ -122,4 +122,31 @@ public class _1_MoreSpicy {
       if(stack.size() <= 1) return -1;
       return count;
    }
+
+   public int solution_error3(int[] scoville, int K) {
+      int answer = 0;
+
+      List<Integer> list = new ArrayList<>();
+
+      for(int i : scoville){
+         list.add(i);
+      }
+
+      int cnt = 0;
+      while(!list.isEmpty()){
+         Collections.sort(list);
+
+         int v1 = list.remove(0); //remove를 한 상태에서
+
+         if(v1 >= K) return answer;
+         if(list.size() <= 1) return -1; //여기서 size를 체크했다
+
+         answer++;
+         int v2 = list.remove(0);
+         //System.out.println("v1:"+v1+" ,v2:"+v2+ " ,list.size():"+list.size());
+         list.add(v1+(v2*2));
+      }
+
+      return -1;
+   }
 }
