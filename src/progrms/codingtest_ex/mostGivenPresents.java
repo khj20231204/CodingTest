@@ -10,9 +10,6 @@ public class mostGivenPresents {
    //클래스B를 찾아서 map에서 A를 찾아서 -1
    //map의 integer가 양수이면 다음 달에 받는 경우
 
-   //선물지수 - map
-   //
-
    class Friend{
       String name;
       Map<String, Integer> map = new HashMap<>();
@@ -88,16 +85,25 @@ public class mostGivenPresents {
          //map의 key에 contains로 확인 후 name이 있는 경우
          //양수이면 count++
          //없는 경우 선물지수로 count
-
+         //System.out.println("-------name:"+f.name);
          for(String s : friends){
-            if(f.map.containsKey(s)){ //value가 양수이면 count++
-               Iterator iter = f.map.values().iterator();
-               while(iter.hasNext()){
-                  int n = Integer.valueOf(iter.next().toString());
-                  //System.out.println(iter.next());
-                  if(n>0) f.result++;
-               }
-            }else{   //선물지수로 count
+
+            if(f.name.equals(s)) continue;
+            //System.out.println(s);
+
+            if(f.map.containsKey(s)){ //선물을 주고 받았다
+               //System.out.println(f.map.get(s));
+               int n = f.map.get(s);
+
+               if(n>0){
+                  f.result++;
+               }else if(n == 0){   //선물지수로 count
+                  int presentNum1 = f.presentNumber;
+                  int presentNum2 = (list.get(list.indexOf(new Friend(s)))).presentNumber;
+
+                  if(presentNum1 > presentNum2) f.result++;
+               }else { continue; }
+            }else{ //선물을 주고 받은 기록이 없다
                int presentNum1 = f.presentNumber;
                int presentNum2 = (list.get(list.indexOf(new Friend(s)))).presentNumber;
 
@@ -107,7 +113,7 @@ public class mostGivenPresents {
       }
 
       for(Friend f : list){
-         System.out.println(f.result);
+         if(answer < f.result) answer = f.result;
       }
 
       return answer;
