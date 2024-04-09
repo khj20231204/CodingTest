@@ -11,7 +11,7 @@ public class bandage {
       int max = attacks[attacks.length-1][0];
 
       int index = 0; //attacks index
-      int MAXCOUNT = 1;
+      int MAXCOUNT = 0;
       int saveTimeCount = 0;
       int nowHealth = health;
       for(int i=1 ; i<=max ; i++){
@@ -20,10 +20,8 @@ public class bandage {
          //1)연속 성공 = 0
          //2)health 감소
          if(attacks[index][0] == i){
-            System.out.println("attacks[index][0]:"+attacks[index][0]+" ,i:"+i);
             saveTimeCount = MAXCOUNT;
             nowHealth -= attacks[index][1];
-            System.out.println("nowHealth:"+nowHealth);
             index++;
          }
          else{
@@ -32,13 +30,12 @@ public class bandage {
             //2)초당 체력 증가
 
             nowHealth += perRecovery;
-
+            saveTimeCount++;
 
             if(saveTime == saveTimeCount){
                nowHealth += addRecovery;
                saveTimeCount = MAXCOUNT;
             }
-            saveTimeCount++;
          }
 
          //health 체크
@@ -47,7 +44,6 @@ public class bandage {
          }else if(nowHealth > health){
             nowHealth = health;
          }
-         System.out.println(nowHealth);
       }
 
       return nowHealth;
