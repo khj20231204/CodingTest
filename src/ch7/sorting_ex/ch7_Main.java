@@ -24,6 +24,7 @@ public class ch7_Main {
         strArray = _2_MakeOrderAsIwant.solution4(strArray,1);
         //for(String s1 : strArray) System.out.print(s1+" ");
 
-
+        classSorting ps = new classSorting();
+        ps.solution();
     }
 }
