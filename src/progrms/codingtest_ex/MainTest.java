@@ -9,6 +9,7 @@ public class MainTest {
       int val_ext = 20300501;
       String sort_by = "remain";
 
-      da.solution(data, ext, val_ext, sort_by);
+      da.solution2(data, ext, val_ext, sort_by);
+
    }
 }

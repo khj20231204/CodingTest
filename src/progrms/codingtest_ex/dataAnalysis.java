@@ -86,6 +86,8 @@ public class dataAnalysis {
       int[][] answer = Arrays.stream(data).filter(o1 -> o1[extIdx] < val_ext)
             .sorted((o1, o2) -> o1[sortIdx] - o2[sortIdx]).toArray(int[][]::new);
 
+      Arrays.stream(data).forEach(a -> System.out.println(a[0]));
+
       return answer;
    }
 
