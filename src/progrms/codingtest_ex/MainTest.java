@@ -10,7 +10,5 @@ public class MainTest {
       String sort_by = "remain";
 
       //da.solution2(data, ext, val_ext, sort_by);
-      StreamEx_sorting ss = new StreamEx_sorting();
-      ss.solution();
    }
 }

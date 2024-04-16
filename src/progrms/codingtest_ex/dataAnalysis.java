@@ -123,7 +123,17 @@ public class dataAnalysis {
       // *lambda, Comparator 사용시 final 이나 effectively final여야한다!
       Collections.sort(list, (o1, o2) -> o1[si] - o2[si]);
 
-
       return list;
+   }
+
+   public int[][] solution5(int[][] data, String ext, int val_ext, String sort_by) {
+
+      String[] dataName = {"code","date","maximum","remain"};
+
+      List<String> list = Arrays.asList(dataName);
+      int extIndex = list.indexOf(ext);
+      int sortIndex = list.indexOf(sort_by);
+
+      return Arrays.stream(data).filter(i -> i[extIndex] < val_ext).sorted(Comparator.comparing(i -> i[sortIndex])).toArray(int[][]::new);
    }
 }
