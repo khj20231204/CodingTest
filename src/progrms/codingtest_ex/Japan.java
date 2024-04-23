@@ -1,46 +1,35 @@
 package progrms.codingtest_ex;
 import java.util.*;
 public class Japan {
-   public int[] solution(String[] keymap, String[] targets) {
+   //시간 초과
+   public int[] solution1(String[] keymap, String[] targets) {
       int[] answer = {};
 
-      String keymapAll = "";
-      for(String s : keymap){
-         keymapAll += s;
-      }
+      //keymap을 character Map에 저장
+      //targets값을 char로 String.indexOf 값을 입력
 
-      String targetsAll = "";
-      for(String s : targets){
-         targetsAll += s;
-      }
-
-      int check = 0;
-      for(char c : targetsAll.toCharArray()){
-         check = keymapAll.indexOf(c);
-      }
-
-      if(check == -1) return new int[]{-1};
-
-      //keymap1과 keymap2의 indexOf 안에서 targets1 검색 끝나면 targets2검색
-      List<Integer> listTotal = new ArrayList<>();
-      List<Integer> answerList = new ArrayList<>();
+      HashMap<Character, Integer> map = new HashMap<>();
+      List<Integer> list = new ArrayList<>();
+      List<Integer> result = new ArrayList<>();
 
       for(String s : targets){ //"ABCD"
-         int sum = 0;
-
-         for(char c : s.toCharArray()){ //'A','B','C'
-
-            int tmp = 100;
+         int total = 0;
+         for(char c : s.toCharArray()){ //'A' 'B' 'C' 'D'
             for(String s2 : keymap){
-               int idx = s2.indexOf(c);
-               if(tmp > idx && idx != -1) tmp = idx;
+               int idx = (s2.indexOf(c)+1);
+               if(idx > 0){
+                  list.add(idx);
+               }
             }
-            //System.out.println(listTotal);
-            sum += tmp;
+            //numbers.stream().max(Integer::compare).orElse(-1);
+            int min = list.stream().min(Integer::compare).orElse(-1);
+            list.clear();
+            total += min;
          }
-         answerList.add(sum);
+         //System.out.println(total);
+         result.add(total);
       }
 
-      return answerList.stream().mapToInt(Integer::intValue).toArray();
+      return result.stream().mapToInt(Integer::intValue).toArray();
    }
 }
