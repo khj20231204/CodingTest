@@ -32,4 +32,43 @@ public class Japan {
 
       return result.stream().mapToInt(Integer::intValue).toArray();
    }
+
+   //error
+   public int[] solution2(String[] keymap, String[] targets) {
+      int[] answer = new int[targets.length];
+
+      int max = 0;
+      for(int i=0 ; i< targets.length ;i++){
+         if(max < targets[i].length()) max = targets[i].length()+1;
+      }
+
+      int index = 0;
+      for(String s : targets){ //"ABCD"
+         int total = 0;
+         int v2 = 0;
+         for(char c : s.toCharArray()){ //'A' 'B' 'C' 'D'
+            int v1 = max;
+            for(String s2 : keymap){
+               v2 = s2.indexOf(c);
+
+               if(v2 != -1){
+                  if(v1 > v2) v1 = v2;
+               }
+
+               //System.out.println("v1:"+v1+" ,v2:"+v2);
+            }
+
+            if(v1 == max){
+               return new int[]{-1};
+            }else{
+               total += (v1+1);
+               //System.out.println("total:"+total);
+            }
+         }
+         answer[index] = total;
+         index++;
+      }
+
+      return answer;
+   }
 }
