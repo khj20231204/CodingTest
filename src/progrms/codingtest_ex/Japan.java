@@ -167,7 +167,7 @@ public class Japan {
       return answer;
    }
 
-   //error
+   //answer[index] 위치에 따라 순서
    public int[] solution6(String[] keymap, String[] targets) {
       int[] answer = new int[targets.length];
 
@@ -188,26 +188,39 @@ public class Japan {
                if(v2 != -1){
                   if(v1 > v2) v1 = v2;
                }
-            }//for3
+            }//for
+      // ------------------------------- error X -------------
 
             if(v1 == max){
-               //return new int[]{-1};
+               answer[index] = -1;
+               break;
+            }else{
+               answer[index] += v1+1; //바로 answer[index]에 더해주면 error없음
+            }
+         }//for2
+
+         index++;
+
+      //------------------------------- error O -------------
+      /*
+            if(v1 == max){
                answer[index] = -1;
 
                check  = false;
                break;
             }else{
-               total += (v1+1);
-               //answer[index] += v1+1;
+               total += (v1+1); //total로 합을 구한 후
             }
          }//for2
          if(check){
-            answer[index] = total;
+            answer[index] = total; //answer[index]에 할당하면 error 발생
          }
          index++;
+       */
+      //------------------------------- /// -------------
+
       }//for1
 
       return answer;
    }
-
 }
