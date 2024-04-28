@@ -88,4 +88,37 @@ public class SecretCode {
 
       return answer;
    }
+
+   public String solution3(String s, String skip, int index) {
+      String answer = "";
+
+      List<Character> sList = new ArrayList<>();
+      List<Character> skipList = new ArrayList<>();
+
+      for(char c : s.toCharArray()){
+         sList.add(c);
+      }
+
+      for(char c : skip.toCharArray()){
+         skipList.add(c);
+      }
+
+      for(int i=0 ; i<sList.size() ; i++){
+         char c = sList.get(i);
+         int count = 0;
+         for(int j=1 ; j<=index ; j++){
+            int tmp = c+j;
+            if(tmp > 122) tmp -= 26;
+            if(skipList.contains((char)tmp)) count++;
+         }
+
+         int tmp2 = c+index+count;
+         if(tmp2 > 122) tmp2 = tmp2-26;
+
+         answer += (char)(tmp2);
+
+      }
+
+      return answer;
+   }
 }
