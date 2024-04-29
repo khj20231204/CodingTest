@@ -90,6 +90,7 @@ public class SecretCode {
    }
 
    public String solution3(String s, String skip, int index) {
+      //s = ""
       String answer = "";
 
       List<Character> sList = new ArrayList<>();
@@ -108,15 +109,37 @@ public class SecretCode {
          int count = 0;
          for(int j=1 ; j<=index ; j++){
             int tmp = c+j;
-            if(tmp > 122) tmp -= 26;
+            if(tmp > 'z') tmp -= 26;
             if(skipList.contains((char)tmp)) count++;
          }
 
          int tmp2 = c+index+count;
-         if(tmp2 > 122) tmp2 = tmp2-26;
+         System.out.println("tmp2:"+tmp2);
+         if(tmp2 > 'z') tmp2 -= 26;
 
          answer += (char)(tmp2);
 
+      }
+
+      return answer;
+   }
+
+   //정답
+   public String solution4(String s, String skip, int index) {
+      String answer = "";
+
+      for (int i = 0; i < s.length(); i++) {
+         char c = s.charAt(i);
+         for (int j = 0; j < index; j++) {
+            c += 1;
+            if (c > 'z') {
+               c -= 26;
+            }
+            if (skip.contains(String.valueOf(c))) {
+               j--;
+            }
+         }
+         answer += c;
       }
 
       return answer;
