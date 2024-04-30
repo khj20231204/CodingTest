@@ -1,4 +1,5 @@
 package progrms.codingtest_ex;
+import java.util.*;
 
 public class PrivacyExpirationPeriod {
    public int[] solution(String today, String[] terms, String[] privacies) {
@@ -13,17 +14,20 @@ public class PrivacyExpirationPeriod {
          //System.out.println(s);
       }
 
-      System.out.println(str[0]);
-      String[] str2 = str[0].split(".");
-      for(String s : str2){
-         System.out.println(s);
-      }*/
+      String ss = "12";
+      int aa = Integer.valueOf(ss);
+      Integer aa2 = Integer.valueOf(ss);
+      int aa3 = Integer.parseInt(ss);
+      Integer aa4 = Integer.parseInt(ss);
 
-      String str = "2021.02.03";
-      String[] str2 = str.split("\\."); //2021   02   03
-      for(String s : s3){
-         System.out.println(s);
-      }
+      //int[] -> String[]
+      int[] k = {1,2,34};
+      String[] kk = Arrays.stream(k).mapToObj(String::valueOf).toArray(String[]::new);
+
+      //String[] -> int[]
+      k = Arrays.stream(kk).mapToInt(Integer::valueOf).toArray();
+
+
       return answer;
    }
 }
