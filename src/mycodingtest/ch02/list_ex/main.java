@@ -1,4 +1,4 @@
-package mycodingtestEx2.ch02.list_ex;
+package mycodingtest.ch02.list_ex;
 
 import java.util.Arrays;
 
