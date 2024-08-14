@@ -14,7 +14,7 @@ public class _1_RemoveLeastNumber {
         List<Integer> list = Arrays.stream(arr).boxed().collect(Collectors.toList());
         
         list.remove(list.indexOf(min));
-        
+        System.out.println("aaaaaaaaaaaaaaaaa");
         return list.stream().mapToInt(Integer::intValue).toArray();
-    }
+	 }
 }
