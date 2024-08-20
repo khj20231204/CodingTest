@@ -2,56 +2,68 @@ package mycodingtest.ch08.node_ex;
 
 import java.util.*;
 
-
+class Node{
+	String name;
+	List<Node> next;
+	
+	public Node(String n){
+		name = n;
+		next = new ArrayList<>();
+	}
+	
+	public void link(Node n) {
+		this.next.add(n);
+	}
+	
+	public String toString() {
+		return name;
+	}
+}
 
 public class SortingNode {
-
-	class Node{	//내부 클래스
-		String name;
-		
-		public Node(String n) {
-			name = n;
-		}
-		
-		
-		public String toString() {
-			return this.name;
-		}
-	}
 	
 	public static void main(String[] args) {
-
-		List<Node> nodes = new ArrayList<>();
+		List<Node> list = new ArrayList<>();
 		
-		SortingNode sn = new SortingNode();
-		SortingNode.Node snn = sn.new Node("A");
+		Node A = new Node("A");
+		Node B = new Node("B");
+		Node C = new Node("C");
+		Node D = new Node("D");
+		Node E = new Node("E");
 		
-		nodes.add(sn.new Node("A"));
-		nodes.add(sn.new Node("B"));
-		nodes.add(sn.new Node("C"));
+		A.link(B);
+		A.link(D);
+		B.link(A);
+		B.link(C);
+		B.link(E);
+		C.link(B);
+		C.link(D);
+		D.link(A);
+		D.link(C);
+		D.link(E);
+		E.link(B);
+		E.link(D);
 		
-		System.out.println(nodes);
+		List<Integer> intVar = new ArrayList<>();
+		int[] intArr = new int[5];
+		for(int i=0 ; i<5 ; i++) {
+			int r = (int)(Math.random()*10);
+			intVar.add(r);
+			intArr[i] = r;
+		}
+		
+		intVar.stream().forEach(System.out::println);
+		System.out.println("");
+		Arrays.stream(intArr).forEach(System.out::println);
+		
+		Queue<Integer> queue = new LinkedList<>();
+		Arrays.stream(intArr).forEach(queue::offer);
+		
+		System.out.println(queue);
+		
 	}
-	
-	public void a() {
-		List<Node> nodes = new ArrayList<>();
 
-		nodes.add(new Node("A"));
-	}
-	
-	public static void b() {
-
-		List<Node> nodes = new ArrayList<>();
-		
-		SortingNode sn = new SortingNode();
-		SortingNode.Node snn = sn.new Node("A");
-		
-		nodes.add(sn.new Node("A"));
-		nodes.add(sn.new Node("B"));
-		nodes.add(sn.new Node("C"));
-		
-		System.out.println(nodes);
-	}
-	
 }
+
+
 
